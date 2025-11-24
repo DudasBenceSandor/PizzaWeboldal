@@ -1,0 +1,49 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+header{
+    background-image: url(/img/pizzakep.jpg);
+    object-fit: contain;
+    height: 500px;
+}
+nav{
+    height: 100%;
+    display: flex;
+    padding: 25px;
+    color: white;
+}
+nav div:nth-child(1){
+    flex: 74%;
+    font-size: x-large;
+}
+nav div:nth-child(2){
+    flex: 26%;
+    align-items: end;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: x-small;
+}
+aside{
+    background-color: #222222;
+}
+section{
+    background-color: #101010;
+}
+article{
+    background-color: #222222;
+}
+footer{
+    background-color: #101010;
+}
