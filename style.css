@@ -1,46 +1,65 @@
 html,body{
     margin: 0;
     padding: 0;
-    height: 100vh;
-    width: 100vw;
-}
-.container{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(20, 1fr);
     height: 100%;
     width: 100%;
 }
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+}
 header{
+    height: 50%;
     background-image: url(/img/pizzakep.jpg);
     background-position: center;
-    grid-area: 1 / 1 / 10 / 1;
+    background-size: cover;
 }
 nav{
     height: 100%;
     padding: 20px;
     color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
 }
-nav a {
+p{
+    color: white;
+}
+nav .part_1{
+    font-size: x-large;
+}
+
+nav .part_2  a{
     width: 100%;
     color: white;
     text-decoration: none;
     font-size: small;
 }
-nav div:first-child{
-    font-size: x-large;
-}
+
 main{
+    height: 40%;
 }
-aside{
+
+.foglalas{
     background-color: #222222;
+    height: auto;
 }
-section{
+.menu{
     background-color: #101010;
+    height: auto;
 }
-article{
+.spec{
     background-color: #222222;
+    height: auto;
 }
+
 footer{
+    height: 10%;
     background-color: #101010;
 }
