@@ -1,3 +1,8 @@
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    color: white;
+}
 html,body{
     margin: 0;
     padding: 0;
@@ -5,61 +10,192 @@ html,body{
     width: 100%;
 }
 
-.container{
-    height: 100vh;
-    width: 100vw;
+.container {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-
 }
-header{
-    height: 50%;
-    background-image: url(/img/pizzakep.jpg);
+
+header {
+    position: relative;
+    min-height: 85vh;
+    background-image: url("/img/pizzakep.jpg");
     background-position: center;
     background-size: cover;
 }
-nav{
-    height: 100%;
-    padding: 20px;
-    color: white;
-    text-align: left;
+
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+}
+
+
+nav {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 30px;
 }
-p{
-    color: white;
-}
-nav .part_1{
-    font-size: x-large;
+
+nav .part_1 {
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
-nav .part_2  a{
-    width: 100%;
-    color: white;
+nav .part_2 {
+    display: flex;
+    font-size: larger;
+}
+
+nav .part_2 a {
     text-decoration: none;
-    font-size: small;
 }
 
-main{
-    height: 40%;
+nav .part_2 a:hover {
+    text-decoration: underline;
 }
 
-.foglalas{
+nav .part_2 a + a::before {
+    content: "/";
+    margin: 0 8px;
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.foglalas,
+.menu,
+.spec {
+    width: 100%;
+    padding: 40px 40px;
+    line-height: 1.5;
+    margin: 0 auto;
+}
+
+.foglalas {
     background-color: #222222;
-    height: auto;
-}
-.menu{
-    background-color: #101010;
-    height: auto;
-}
-.spec{
-    background-color: #222222;
-    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-footer{
-    height: 10%;
+main .foglalas .fog:nth-child(1){
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+main .foglalas .fog:nth-child(1) strong{
+
+    font-size: xx-large;
+}
+
+main .foglalas .fog:nth-child(1) small{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    font-style:oblique;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main .foglalas .fog:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 600px;
+    font-weight: 100;
+}
+
+main .foglalas .fog:nth-child(2) p{
+    font-size: larger;
+}
+
+main .foglalas .fog:nth-child(2) strong{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: x-large;
+
+}
+
+.menu {
     background-color: #101010;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.menu > div:nth-child(1){
+    font-size: xx-large;
+}
+.menu > div:nth-child(1)::after{
+    content: "–";
+}
+
+.menu > div:nth-child(1)::before{
+    content: "–";
+}
+.menu div:nth-child(2){
+    font-size: large;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+.menu div:nth-child(3){
+    font-style: oblique;
+    display: flex;
+    justify-content: center;
+    width: 550px;
+    text-align: center;
+    font-size: larger;
+    font-weight: 100;
+}
+.menu div:nth-child(4){
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+.spec {
+    background-color: #222222;
+}
+
+
+
+footer {
+    background-color: #000000;
+    padding: 20px 40px;
+    font-size: 0.85rem;
+    color: #aaaaaa;
+    line-height: 1.4;
+}
+
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 16px 20px;
+    }
+
+    .foglalas,
+    .menu,
+    .spec,
+    footer {
+        padding: 24px 16px;
+    }
 }
