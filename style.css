@@ -31,6 +31,12 @@ header::before {
     inset: 0;
     background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
 }
+.hamburger{
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
 
 
 nav {
@@ -235,18 +241,39 @@ footer {
 }
 
 
-@media (max-width: 600px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 16px 20px;
-    }
+@media (max-width: 768px){
+  nav .part_2{
+    position: relative;
+    display: flex;      /* maradjon látható */
+    align-items: center;
+  }
 
-    .foglalas,
-    .menu,
-    .spec,
-    footer {
-        padding: 24px 16px;
-    }
+  nav .hamburger{
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  nav .links{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 100vw;
+    background-color: #111;
+    padding: 20px 0;
+    text-align: center;
+    gap: 15px;
+  }
+
+  nav .part_2.active .links{
+    display: flex;
+  }
+
+  /* a "/" elválasztó ne legyen mobilon */
+  nav .links a + a::before{
+    content: "";
+    margin: 0;
+  }
 }
