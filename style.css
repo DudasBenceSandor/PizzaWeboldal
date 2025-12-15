@@ -32,6 +32,7 @@ header::before {
     background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.8));
 }
 .hamburger{
+    position: sticky;
     display: none;
     font-size: 28px;
     cursor: pointer;
@@ -171,14 +172,20 @@ main .foglalas .fog:nth-child(2) strong{
 .menu div:nth-child(4){
     display: flex;
     flex-direction: row;
-    gap: 100px;
-    padding:50px 0 25px 0;
+    gap: 5vw;
+    padding:5vh 0 2vh 0;
 }
 
 .menu div:nth-child(4) a{
     text-decoration: none;
     border: solid 1px white;
     padding: 15px 75px 15px 75px;
+}
+
+.menu div:nth-child(4) a:hover{
+    background-color: white;
+    color: black;
+    animation:10ms;
 }
 
 
@@ -197,38 +204,57 @@ main .foglalas .fog:nth-child(2) strong{
 }
 .spec div{
     display: grid;
-    grid-template-columns: repeat(10, auto);
-    grid-template-rows: repeat(6, minmax(20px,1fr));
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: repeat(2, 50vh);
+    gap: 25px;
 }
 .spec div .kep:nth-child(1){
     background-image: url(./img/pizzakep.jpg);
     background-position: center;
     background-size: cover;
-    grid-area: 1 / 1 / 3 / 5;
+    grid-area: 1 / 1 / 2 / 3;
 }
 .spec div .kep:nth-child(2){
     background-image: url(./img/pizzakep2.jpg);
     background-position: center;
     background-size: cover;
-    grid-area: 1 / 6 / 3 / 10;
+    grid-area: 1 / 3 / 2 / 4;
 }
 .spec div .kep:nth-child(3){
     background-image: url(./img/pizzakep3.jpg);
     background-position: center;
     background-size: cover;
-    grid-area: 5 / 1 / 5 / 1;
+    grid-area: 2 / 1 / 3 / 2;
 }
 .spec div .kep:nth-child(4){
     background-image: url(./img/pizzakep4.jpg);
     background-position: center;
     background-size: cover;
-    grid-area: 5 / 3 / 5 / 4;
+    grid-area: 2 / 2 / 3 / 3;
 }
 .spec div .kep:nth-child(5){
     background-image: url(./img/pizzakep5.jpg);
     background-position: center;
     background-size: cover;
-    grid-area: 5 / 5 / 6 / 10;
+    grid-area: 2 / 3 / 4 / 4;
+}
+
+.spec .kepek .kep{  
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.spec .kepek .kep{
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  font-size: larger;
+  padding: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  -webkit-text-stroke: 0.2px black;
 }
 
 
@@ -238,42 +264,62 @@ footer {
     font-size: 0.85rem;
     color: #aaaaaa;
     line-height: 1.4;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
 }
 
 
 @media (max-width: 768px){
+
+  /* a jobb oldali blokk maradjon látható, hogy a hamburger mindig ott legyen */
   nav .part_2{
     position: relative;
-    display: flex;      /* maradjon látható */
+    display: flex;
     align-items: center;
   }
 
-  nav .hamburger{
+  /* hamburger látszódjon mobilon */
+  nav .part_2 .hamburger{
     display: block;
     font-size: 28px;
     cursor: pointer;
   }
 
-  nav .links{
+  /* a linkek mobilon alapból rejtve */
+  nav .part_2 a{
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 45px;
-    right: 0;
-    width: 100vw;
-    background-color: #111;
-    padding: 20px 0;
-    text-align: center;
-    gap: 15px;
   }
 
-  nav .part_2.active .links{
-    display: flex;
+  /* ha active, akkor jelenjenek meg a linkek lenyíló menüként */
+  nav .part_2.active a{
+    display: block;
+    padding: 12px 0;
+  }
+
+  /* lenyíló panel kinézet */
+  nav .part_2.active{
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #111;
+    flex-direction: column;
+    padding: 20px 0;
+    text-align: center;
+    gap: 10px;
   }
 
   /* a "/" elválasztó ne legyen mobilon */
-  nav .links a + a::before{
+  nav .part_2 a + a::before{
     content: "";
     margin: 0;
   }
+    .menu div:nth-child(4){
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    padding:5vh 0 2vh 0;
+    }
 }
