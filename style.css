@@ -206,7 +206,7 @@ main .foglalas .fog:nth-child(2) strong{
 .spec div{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
-    grid-template-rows: repeat(2, 50vh);
+    grid-template-rows: repeat(2, minmax(50vh , 80vh));
     gap: 25px;
 }
 .spec div .kep:nth-child(1){
@@ -364,4 +364,46 @@ footer .footer-part2{
         flex-direction: column;
         text-align: right;
     }
+}
+
+@media (max-width: 1200px){
+
+  nav .part_2{
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  nav .part_2 .hamburger{
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  nav .part_2 a{
+    display: none;
+  }
+
+
+  nav .part_2.active a{
+    display: block;
+    padding: 12px 0;
+  }
+
+  nav .part_2.active{
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+    padding: 20px 0;
+    text-align: center;
+    gap: 10px;
+  }
+
+  nav .part_2 a + a::before{
+    content: "";
+    margin: 0;
+  }
 }
