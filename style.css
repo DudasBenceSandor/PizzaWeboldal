@@ -364,6 +364,9 @@ footer .footer-part2{
         flex-direction: column;
         text-align: right;
     }
+    footer .footer-part1 div:nth-child(1){
+    text-align: left;
+}
 }
 
 @media (max-width: 1200px){
