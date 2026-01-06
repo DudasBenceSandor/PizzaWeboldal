@@ -205,8 +205,10 @@ main .foglalas .fog:nth-child(2) strong{
 }
 .spec div{
     display: grid;
-    grid-template-columns: repeat(3, 15vw) ;
-    grid-template-rows: repeat(3, 15vh);
+    grid-template-columns: repeat(4, 1fr) ;
+    grid-template-rows: 6fr 1fr 2fr;
+    height: 15vw;
+    width: 15vw;
     grid-template-areas: "top1 top1 top2"
                          "middle1 middle2 top2"
                          "middle1 middle2 middle3"
@@ -217,7 +219,13 @@ main .foglalas .fog:nth-child(2) strong{
     background-image: url(./img/pizzakep.jpg);
     background-position: center;
     background-size: cover;
-    grid-area: top1
+    grid-area: top1;
+}
+.spec div .kep:nth-child(1)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
 }
 .spec div .kep:nth-child(2){
     background-image: url(./img/pizzakep2.jpg);
@@ -225,11 +233,23 @@ main .foglalas .fog:nth-child(2) strong{
     background-size: cover;
     grid-area: top2;
 }
+.spec div .kep:nth-child(2)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+}
 .spec div .kep:nth-child(3){
     background-image: url(./img/pizzakep3.jpg);
     background-position: center;
     background-size: cover;
     grid-area: middle1;
+}
+.spec div .kep:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
 }
 .spec div .kep:nth-child(4){
     background-image: url(./img/pizzakep4.jpg);
@@ -237,13 +257,24 @@ main .foglalas .fog:nth-child(2) strong{
     background-size: cover;
     grid-area: middle2;
 }
+.spec div .kep:nth-child(4)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+}
 .spec div .kep:nth-child(5){
     background-image: url(./img/pizzakep5.jpg);
     background-position: center;
     background-size: cover;
     grid-area: middle3;
 }
-
+.spec div .kep:nth-child(5)::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+}
 .spec .kepek .kep{  
   overflow: hidden;
   background-position: center;
@@ -259,7 +290,6 @@ main .foglalas .fog:nth-child(2) strong{
   padding: 10px;
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
-  -webkit-text-stroke: 0.2px black;
 }
 
 
