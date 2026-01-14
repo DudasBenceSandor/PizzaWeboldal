@@ -324,8 +324,8 @@ footer {
     line-height: 1.4;
     display: flex;
     flex-direction: column;
-    padding-left: 25%;
-    padding-right: 25%;
+    padding-left: 30%;
+    padding-right: 30%;
 }
 footer .footer-part1{
     display: flex;
@@ -335,13 +335,14 @@ footer .footer-part1{
 }
 footer .footer-part1 div:nth-child(1){
     font-size: x-large;
-    flex: 33%;
+    flex: 30%;
     padding-top: 0;
     text-align: right;
     font-weight: bolder;
+    word-wrap: break-word;
 }
 footer .footer-part1 div:nth-child(2){
-    flex: 33%;
+    flex: 40%;
     text-align: left;
 }
 footer .footer-part1 div:nth-child(2) li{
@@ -359,10 +360,9 @@ footer .footer-part1 div:nth-child(2) li ol:last-child{
     border-bottom:none;
 }
 
-
 footer .footer-part1 div:nth-child(3){
     font-size: large;
-    flex: 33%;
+    flex: 30%;
     text-align: left;
 }
 footer .footer-part1 p:first-child {
@@ -389,13 +389,20 @@ footer .footer-part2{
     line-height: 0.9;
     font-size: smaller;
     border-top: solid 1px white ;
-    text-wrap: wrap;
+}
+footer .footer-part2 p{
+    padding-left: 20%;
+    padding-right: 20%;
+    word-wrap: normal;
 }
 
 @media (max-width: 768px){
 
+    body {
+        overflow-x: hidden;
+    }
     .container{
-        min-height: 100vw;
+        min-height: 90vw;
     }
     nav .part_2{
         position: relative;
@@ -436,28 +443,50 @@ footer .footer-part2{
         margin: 0;
     }
 
+    .menu div:nth-child(3){
+        padding: 0;
+    }
     .menu div:nth-child(4){
         display: flex;
         flex-direction: column;
-        gap: 5vw;
+        gap: 10vw;
         padding:5vh 0 2vh 0;
     }
-
-    footer .footer-part1{
-        flex-direction: column;
-        text-align: right;
-    }
-    footer .footer-part1 div:nth-child(1){
-        text-align: left;
+    
+    .spec {
+        padding-right: 10%;
+        padding-left: 10%;
     }
     .spec div{
         display: flex;
         flex-direction: column;
     }
+    .spec .kepek{
+        height: 200vh;
+        width: 75vw;
+    }
+
+    footer{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    footer .footer-part1{
+        flex-direction: column;
+        text-align: right;
+    }
+    footer .footer-part1 div:nth-child(1){
+        text-align: right;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
 }
 
 @media (max-width: 1200px){
 
+  body {
+    overflow-x: hidden;
+  }
   nav .part_2{
     position: relative;
     display: flex;
