@@ -19,7 +19,7 @@ html,body{
 header {
     position: relative;
     min-height: 60vh;
-    background-image: url("/img/pizzakep.jpg");
+    background-image: url("./img/pizzakep.jpg");
     background-position: center;
     background-size: cover;
 }
